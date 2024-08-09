@@ -1,0 +1,23 @@
+/* src/components/AbsenteeList/AbsenteeList.css */
+.absentee-list {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+  }
+  
+  .absentee-list table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .absentee-list th, .absentee-list td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .absentee-list th {
+    background-color: #f4f4f4;
+  }
+  

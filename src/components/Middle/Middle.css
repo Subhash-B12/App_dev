@@ -1,0 +1,71 @@
+.middle-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  background-color: #f9f9f9;
+}
+
+.text-container {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.text-container h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.text-container p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  gap: 20px; /* Add gap between buttons */
+  padding-left: 200px;
+}
+
+.view-course-btn, .enquiry-list-btn {
+  background-color: #101010;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+}
+
+.view-course-btn:hover, .enquiry-list-btn:hover {
+  background-color: #44a937;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.title h1 {
+  font-size: 100px; /* Adjust size as needed */
+  margin-bottom: 5px; /* Adjust spacing as needed */
+  text-align: center;
+}
+
+.right {
+  padding-left: 20%;
+  color: blue;
+}

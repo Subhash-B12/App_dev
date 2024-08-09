@@ -1,0 +1,83 @@
+/* EnquiryList.css */
+
+.enquiry-list-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #eaeaea; /* Soft background color for better contrast */
+  }
+  
+  .enquiry-input-container {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px; /* Set a max-width for better responsiveness */
+    width: 100%;
+  }
+  
+  .profile-icon-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    width: 100%; /* Ensures the icon and input are aligned properly */
+    position: relative;
+  }
+  
+  .profile-icon {
+    width: 40px;
+    height: 40px;
+    color: #000000; /* Black icon color */
+    position: absolute;
+    left: 0; /* Align the icon to the left edge */
+  }
+  
+  .roll-number-label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+    margin-left: 50px; /* Adjusted margin to make space for the icon */
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  
+  .input-group input {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .input-group button {
+    background-color: #000000; /* Black background */
+    color: #ffffff; /* White text */
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 12px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .input-group button:hover {
+    background-color: #28a745; /* Green background on hover */
+    transform: translateY(-2px);
+  }
+  
+  .input-group button:active {
+    transform: translateY(1px);
+  }
+  

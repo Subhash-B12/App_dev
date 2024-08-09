@@ -1,0 +1,23 @@
+/* src/components/HomeworkActivity/HomeworkActivity.css */
+.homework-activity {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+  }
+  
+  .homework-activity table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .homework-activity th, .homework-activity td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .homework-activity th {
+    background-color: #f4f4f4;
+  }
+  
