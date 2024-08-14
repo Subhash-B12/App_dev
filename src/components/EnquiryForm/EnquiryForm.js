@@ -1,6 +1,5 @@
-// src/components/EnquiryForm/EnquiryForm.js
-
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './EnquiryForm.css';
 
 const EnquiryForm = () => {
@@ -11,10 +10,13 @@ const EnquiryForm = () => {
     dob: '',
     address: '',
     course: '',
-    contactMethod: '',
+    contact_method: '', // Ensure this is a string, not an array
     subject: '',
     message: ''
   });
+
+  const [errors, setErrors] = useState({});
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,21 +28,28 @@ const EnquiryForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    fetch('http://localhost:5001/enquiries', {
+    fetch('http://127.0.0.1:8000/api/enquiries/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(formData)
     })
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          return response.json().then(data => {
+            throw data;
+          });
+        }
+        return response.json();
+      })
       .then(data => {
         console.log('Success:', data);
-        // Redirect the user or show a success message here
+        navigate('/'); // Navigate to home page after successful submission
       })
       .catch(error => {
         console.error('Error:', error);
+        setErrors(error); // Set errors to be displayed
       });
   };
 
@@ -58,6 +67,7 @@ const EnquiryForm = () => {
             onChange={handleChange}
             required
           />
+          {errors.name && <p className="error">{errors.name}</p>}
         </div>
         <div className="form-group">
           <label htmlFor="email">Email:</label>
@@ -69,6 +79,7 @@ const EnquiryForm = () => {
             onChange={handleChange}
             required
           />
+          {errors.email && <p className="error">{errors.email}</p>}
         </div>
         <div className="form-group">
           <label htmlFor="phone">Phone:</label>
@@ -80,6 +91,7 @@ const EnquiryForm = () => {
             onChange={handleChange}
             required
           />
+          {errors.phone && <p className="error">{errors.phone}</p>}
         </div>
         <div className="form-group">
           <label htmlFor="dob">Date of Birth:</label>
@@ -91,6 +103,7 @@ const EnquiryForm = () => {
             onChange={handleChange}
             required
           />
+          {errors.dob && <p className="error">{errors.dob}</p>}
         </div>
         <div className="form-group">
           <label htmlFor="address">Address:</label>
@@ -101,6 +114,7 @@ const EnquiryForm = () => {
             onChange={handleChange}
             required
           />
+          {errors.address && <p className="error">{errors.address}</p>}
         </div>
         <div className="form-group">
           <label htmlFor="course">Course:</label>
@@ -112,17 +126,21 @@ const EnquiryForm = () => {
             onChange={handleChange}
             required
           />
+          {errors.course && <p className="error">{errors.course}</p>}
         </div>
         <div className="form-group">
-          <label htmlFor="contactMethod">Preferred Contact Method:</label>
+          <label htmlFor="contact_method">Preferred Contact Method:</label>
           <input
             type="text"
-            id="contactMethod"
-            name="contactMethod"
-            value={formData.contactMethod}
+            id="contact_method"
+            name="contact_method"
+            value={formData.contact_method} // Ensure it's a string
             onChange={handleChange}
             required
           />
+          {errors.contact_method && (
+            <p className="error">{errors.contact_method}</p>
+          )}
         </div>
         <div className="form-group">
           <label htmlFor="subject">Subject:</label>
@@ -134,6 +152,7 @@ const EnquiryForm = () => {
             onChange={handleChange}
             required
           />
+          {errors.subject && <p className="error">{errors.subject}</p>}
         </div>
         <div className="form-group">
           <label htmlFor="message">Message:</label>
@@ -144,8 +163,9 @@ const EnquiryForm = () => {
             onChange={handleChange}
             required
           />
+          {errors.message && <p className="error">{errors.message}</p>}
         </div>
-        <button type="submit" >Submit</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );

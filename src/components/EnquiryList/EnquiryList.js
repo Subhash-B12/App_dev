@@ -6,7 +6,6 @@ import './EnquiryList.css';
 const EnquiryList = () => {
   const [rollNumber, setRollNumber] = useState('');
   const navigate = useNavigate();
-
   const handleRollNumberChange = (e) => {
     setRollNumber(e.target.value);
   };

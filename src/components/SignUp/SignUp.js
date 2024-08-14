@@ -32,12 +32,15 @@ export default function SignUp() {
     const userData = {
       email: email,
       password: password,
-      firstName: data.get('firstName'),
-      lastName: data.get('lastName'),
+      first_name: data.get('firstName'),
+      last_name: data.get('lastName'),
     };
 
+    // Log the user data to the console (optional)
+    console.log(userData);
+
     // Post user data to JSON server
-    fetch('http://localhost:5001/users', {
+    fetch('http://127.0.0.1:8000/api/users/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -58,6 +61,7 @@ export default function SignUp() {
         // Handle error (e.g., show error message)
       });
   };
+
 
   return (
     <ThemeProvider theme={defaultTheme}>

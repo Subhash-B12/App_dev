@@ -9,10 +9,6 @@ const Middle = () => {
     navigate('/enquiry');
   };
 
-  const handleEnquiryListClick = () => {
-    navigate('/enquiry-list');
-  };
-
   return (
     <div className="middle-container">
       <div className="text-container">
@@ -28,7 +24,6 @@ const Middle = () => {
         </p>
         <div className="button-container">
           <button className="view-course-btn" onClick={handleEnquiryClick}>Enquiry Form</button>
-          <button className="enquiry-list-btn" onClick={handleEnquiryListClick}>Enquiry List</button>
         </div>
       </div>
       <div className="image-container">
@@ -39,3 +34,4 @@ const Middle = () => {
 }
 
 export default Middle;
+  

@@ -1,0 +1,14 @@
+.table-row {
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-row td {
+  padding: 10px 15px;
+  text-align: left;
+  color: #333;
+}
+
+.table-row:hover {
+  background-color: #e0e0e0;
+}

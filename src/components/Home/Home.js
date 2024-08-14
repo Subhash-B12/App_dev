@@ -12,6 +12,7 @@ const Home = () => {
       <Middle />
       <Footer />
       <header className="App-header">
+        {/* Add any additional content for the header here */}
       </header>
     </div>
   );

@@ -1,0 +1,142 @@
+.course-list-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #f7f7f7; /* Light gray background */
+    position: relative; /* Needed for positioning the back to home button */
+  }
+  
+  .section-title {
+    color: #4a90e2; /* Bright blue */
+    font-size: 16px;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  
+  .course-list-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 20px 0;
+    color: #333; /* Dark gray for contrast */
+  }
+  
+  .courses {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+  
+  .course-card {
+    background-color: #fff; /* White background for the card */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .course-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  .course-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+  }
+  
+  .course-image:hover {
+    opacity: 0.8;
+  }
+  
+  .course-info {
+    padding: 20px;
+    background: #ffffff; /* White background for info */
+  }
+  
+  .course-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1e1e50; /* Deep blue */
+    margin: 0 0 10px;
+    background-color: #e0e0e0; /* Light gray background for title */
+    padding: 12px;
+    border-radius: 6px;
+  }
+  
+  .course-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    color: #666; /* Medium gray */
+  }
+  
+  .course-meta i {
+    margin-right: 8px;
+    color: #4a90e2; /* Bright blue for icons */
+  }
+  
+  .instructor,
+  .rating {
+    display: flex;
+    align-items: center;
+  }
+  
+  .enroll-button {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 24px;
+    background-color: #4a90e2; /* Bright blue */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .course-card:hover .enroll-button {
+    display: block;
+    transform: translateX(-50%) translateY(10px);
+  }
+  
+  .enroll-button:hover {
+    background-color: #28a745; /* Green on hover */
+    transform: translateX(-50%) translateY(0);
+  }
+  
+  .enroll-button:active {
+    background-color: #1e7e34; /* Darker green on click */
+  }
+  
+  .back-to-home-button {
+    display: block;
+    margin: 40px auto 20px; /* Margin top added for space above the button */
+    padding: 8px 16px;
+    background-color: #28a745; /* Green background */
+    color: #fff; /* White text */
+    text-decoration: none; /* Remove underline from link */
+    border-radius: 6px;
+    font-size: 14px; /* Smaller font size */
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .back-to-home-button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly scale up button */
+  }
+  
+  .back-to-home-button:active {
+    background-color: #1e7e34; /* Even darker green on click */
+  }
+  

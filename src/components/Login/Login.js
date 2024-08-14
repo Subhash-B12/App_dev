@@ -1,4 +1,3 @@
-// src/components/Login/Login.js
 import React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -29,12 +28,12 @@ export default function Login() {
     const email = data.get('email');
     const password = data.get('password');
 
-    // Fetch user data from JSON server
-    fetch(`http://localhost:5001/users?email=${email}`)
+    // Fetch entire user list from JSON server
+    fetch('http://127.0.0.1:8000/api/users/')
       .then(response => response.json())
       .then(users => {
-        if (users.length > 0) {
-          const user = users[0]; // Assuming email is unique
+        const user = users.find(user => user.email === email);
+        if (user) {
           if (user.password === password) {
             setOpen(true);
             // Redirect based on email domain
